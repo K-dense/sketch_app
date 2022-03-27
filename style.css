@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+#grid-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 480px;
+  margin: auto;
+  border: solid 1px black;
+}
+
+#row-container {
+  display: flex;
+  justify-content: center;
+  max-width: 500px;
+  margin: auto;
+}
+
+#square {
+  width: 30px;
+  height: 30px;
+}
