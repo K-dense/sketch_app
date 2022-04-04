@@ -63,6 +63,35 @@ svg {
 .button-container {
   display: flex;
   justify-content: center;
+  margin: 20px 0;
+  gap: 50px;
+}
+
+.button-container button {
+  cursor: pointer;
+  font-size: 25px;
+  padding: 5px 45px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  outline: none;
+  border: none;
+}
+
+#pixel, #eraser {
+  border-radius: 40px;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  background-image: repeating-linear-gradient(90deg, 
+    rgba(193, 147, 179, 0.6),
+    rgba(193, 147, 179, 0.6) 10%, 
+    rgb(224, 147, 151) 10%, rgb(224, 147, 151) 20%);
+  background-size: 100%;
+  transition: background 0.3s ease-in-out;
+}
+
+#pixel:hover, #eraser:hover {
+  background-position: 150px;
 }
 
 .slidecontainer {
@@ -75,10 +104,24 @@ svg {
 }
 
 .slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 300px;
+  border: solid 5px rgba(255, 229, 197, 1);
+  background-color: #e0a2de;
   margin: 10px 0;
 }
 
-@media screen and (max-width: 500px) {
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 40px;
+  height: 42px;
+  background: url('https://img.icons8.com/office/40/000000/pixel-star.png');
+  cursor: pointer;
+}
+
+@media screen and (max-width: 550px) {
   body {
     background: url(https://i.pinimg.com/564x/71/ee/32/71ee32209d00305bc26223012f0a2ddd.jpg);
   }

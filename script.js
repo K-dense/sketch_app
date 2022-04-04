@@ -3,7 +3,11 @@ const colorPicker = document.getElementById('colorPicker');
 const slider = document.getElementById('myRange');
 const output = document.getElementById('slider-container');
 
+const pixel = document.getElementById('pixel');
+const eraser = document.getElementById('eraser');
+
 let isDrawing = false; // <- To handle the "mouseover" event listener
+let isErasing = false; // <- To handle eraser
 
 output.innerHTML = '16';
 
@@ -70,14 +74,22 @@ function eventListeners() {
   squares.forEach((square) => {
     square.addEventListener('mousedown', (event) => {
       isDrawing = true;
-      event.target.style.backgroundColor = colorPicker.value;
+      if (isErasing === true) {
+        event.target.style.backgroundColor = 'blanchedalmond';
+      } else {
+        event.target.style.backgroundColor = colorPicker.value;
+      }
     });
   });
 
   squares.forEach((square) => {
     square.addEventListener('mouseover', (event) => {
       if (isDrawing === true) {
-        event.target.style.backgroundColor = colorPicker.value;
+        if (isErasing === true) {
+          event.target.style.backgroundColor = 'blanchedalmond';
+        } else {
+          event.target.style.backgroundColor = colorPicker.value;
+        }
       }
     });
   });
@@ -86,3 +98,11 @@ function eventListeners() {
     isDrawing = false;
   });
 }
+
+pixel.addEventListener('click', () => {
+  isErasing = false;
+});
+
+eraser.addEventListener('click', () => {
+  isErasing = true;
+});
