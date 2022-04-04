@@ -1,14 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=VT323&display=swap');
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+body {
+  background: url(https://images8.alphacoders.com/939/939716.png);
+}
+
+.navbar {
+  background:linear-gradient(151deg, rgba(255, 229, 197, 1) 0%, rgba(197, 134, 158, 1) 65%, rgba(197, 113, 79, 1) 100%);
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+svg {
+  width: 50px;
+  height: 50px;
+}
+
+.color-picker-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.jp-p {
+  font-size: 50px;
+  font-weight: 700;
+  color:rgba(128, 99, 130, 1);
+}
+
+#colorPicker {
+  width: 482px;
+  height: 30px;
 }
 
 #grid-container {
   display: flex;
   flex-direction: column;
   margin: auto;
-  border: solid 1px black;
 }
 
 #row-container {
@@ -18,5 +57,29 @@
 }
 
 #square {
-  border: solid 1px red;
+  background-color: blanchedalmond;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.slidecontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 40px;
+  font-weight: 700;
+  color:#e0a2de;
+}
+
+.slider {
+  margin: 10px 0;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    background: url(https://i.pinimg.com/564x/71/ee/32/71ee32209d00305bc26223012f0a2ddd.jpg);
+  }
 }
